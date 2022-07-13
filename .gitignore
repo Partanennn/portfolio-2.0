@@ -1,0 +1,15 @@
+# Dependency directories
+node_modules
+
+# Ignore yarn lock
+yarn.lock
+
+# Editor files
+.vscode
+.swc
+.next
+
+# ignore log files and databases
+*.log
+*.sql
+*.sqlite
