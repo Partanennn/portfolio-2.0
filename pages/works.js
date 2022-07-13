@@ -1,4 +1,5 @@
-import { Container } from '@chakra-ui/react'
+import { Box, Button, Container } from '@chakra-ui/react'
+import NextLink from 'next/link'
 
 const Works = () => {
   return (
@@ -14,6 +15,11 @@ const Works = () => {
         </Section>
       </SimpleGrid> */}
       Incoming
+      <Box my={6} align="center">
+        <NextLink href="/">
+          <Button colorScheme="teal">Return to home</Button>
+        </NextLink>
+      </Box>
     </Container>
   )
 }

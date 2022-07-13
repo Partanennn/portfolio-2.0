@@ -15,18 +15,21 @@ import {
   useColorModeValue
 } from '@chakra-ui/react'
 import { HamburgerIcon } from '@chakra-ui/icons'
+import { IoLogoGithub } from 'react-icons/io5'
 import ThemeToggleButton from './theme-toggle-button'
 
-const LinkItem = ({ href, path, children }) => {
+const LinkItem = ({ href, path, target, children, ...props }) => {
   const active = path === href
   const inactiveColor = useColorModeValue('gray200', 'whiteAlpha.900')
 
   return (
-    <NextLink href={href}>
+    <NextLink href={href} passHref>
       <Link
         p={2}
         bg={active ? 'glassTeal' : undefined}
         color={active ? '#202023' : inactiveColor}
+        target={target}
+        {...props}
       >
         {children}
       </Link>
@@ -72,8 +75,16 @@ const NavBar = props => {
           <LinkItem href="/works" path={path}>
             Works
           </LinkItem>
-          <LinkItem href="/posts" path={path}>
-            Posts
+          <LinkItem
+            target="_blank"
+            href="https://github.com/Partanennn/portfolio-2.0/"
+            path={path}
+            display="inline-flex"
+            alignItems="center"
+            style={{ gap: 4 }}
+          >
+            <IoLogoGithub />
+            Source code
           </LinkItem>
         </Stack>
 
@@ -94,6 +105,16 @@ const NavBar = props => {
                 <NextLink href="/works" passHref>
                   <MenuItem as={Link}>Works</MenuItem>
                 </NextLink>
+                <MenuItem
+                  as={Link}
+                  href="https://github.com/Partanennn/portfolio-2.0/"
+                  display="inline-flex"
+                  alignItems="center"
+                  style={{ gap: 4 }}
+                >
+                  <IoLogoGithub />
+                  Source code
+                </MenuItem>
                 <MenuItem as={Link} href="https://www.craftz.dog/">
                   View Takuya Matsuyama
                 </MenuItem>
