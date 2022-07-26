@@ -80,10 +80,6 @@ const Page = () => {
             Bio
           </Heading>
           <BioSection>
-            <BioYear>1997</BioYear>
-            Born in Kiuruvesi, Finland.
-          </BioSection>
-          <BioSection>
             <BioYear>2016 - 2017</BioYear>
             Military service (Non-Commissioned Officer)
           </BioSection>
@@ -92,11 +88,11 @@ const Page = () => {
             Computer Science in University of Eastern Finland (125 credit)
           </BioSection>
           <BioSection>
-            <BioYear>2019</BioYear>
+            <BioYear>2019 - present</BioYear>
             Started Computer Science in Tampere University
           </BioSection>
           <BioSection>
-            <BioYear>2020</BioYear>
+            <BioYear>2020 - present</BioYear>
             Started as Software Developer at Dooap Oy. Main technologies:
             <br />● React
             <br />● TypeScript
