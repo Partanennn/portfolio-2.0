@@ -1,130 +1,127 @@
-import Logo from './logo.js'
-import NextLink from 'next/link'
+import Logo from './logo.js';
+import NextLink from 'next/link';
 import {
-  Container,
-  Box,
-  Link,
-  Stack,
-  Heading,
-  Flex,
-  Menu,
-  MenuItem,
-  MenuList,
-  MenuButton,
-  IconButton,
-  useColorModeValue
-} from '@chakra-ui/react'
-import { HamburgerIcon } from '@chakra-ui/icons'
-import { IoLogoGithub } from 'react-icons/io5'
-import ThemeToggleButton from './theme-toggle-button'
+    Container,
+    Box,
+    Link,
+    Stack,
+    Heading,
+    Flex,
+    Menu,
+    MenuItem,
+    MenuList,
+    MenuButton,
+    IconButton,
+    useColorModeValue,
+} from '@chakra-ui/react';
+import { HamburgerIcon } from '@chakra-ui/icons';
+import { IoLogoGithub } from 'react-icons/io5';
+import ThemeToggleButton from './theme-toggle-button';
 
 const LinkItem = ({ href, path, target, children, ...props }) => {
-  const active = path === href
-  const inactiveColor = useColorModeValue('gray200', 'whiteAlpha.900')
+    const active = path === href;
+    const inactiveColor = useColorModeValue('gray200', 'whiteAlpha.900');
 
-  return (
-    <NextLink href={href} passHref>
-      <Link
-        p={2}
-        bg={active ? 'glassTeal' : undefined}
-        color={active ? '#202023' : inactiveColor}
-        target={target}
-        {...props}
-      >
-        {children}
-      </Link>
-    </NextLink>
-  )
-}
+    return (
+        <NextLink href={href} passHref>
+            <Link
+                p={2}
+                bg={active ? 'glassTeal' : undefined}
+                color={active ? '#202023' : inactiveColor}
+                target={target}
+                {...props}
+            >
+                {children}
+            </Link>
+        </NextLink>
+    );
+};
 
-const NavBar = props => {
-  const { path } = props
+const NavBar = (props) => {
+    const { path } = props;
 
-  return (
-    <Box
-      position="fixed"
-      as="nav"
-      w="100%"
-      bg={useColorModeValue('#ffffff40', '#20202380')}
-      style={{ backdropFilter: 'blur(10px' }}
-      zIndex={1}
-      {...props}
-    >
-      <Container
-        display="flex"
-        p={2}
-        maxW="container.md"
-        wrap="wrap"
-        align="center"
-        justify="space-between"
-      >
-        <Flex align="center" mr={5}>
-          <Heading as="h1" size="lg" letterSpacing={'tighter'}>
-            <Logo />
-          </Heading>
-        </Flex>
-
-        <Stack
-          direction={{ base: 'column', md: 'row' }}
-          display={{ base: 'none', md: 'flex' }}
-          width={{ base: 'full', md: 'auto' }}
-          alignItems="center"
-          flexGrow={1}
-          mt={{ base: 4, nmd: 0 }}
+    return (
+        <Box
+            position="fixed"
+            as="nav"
+            w="100%"
+            bg={useColorModeValue('#ffffff40', '#20202380')}
+            style={{ backdropFilter: 'blur(10px' }}
+            zIndex={1}
+            {...props}
         >
-          <LinkItem href="/works" path={path}>
-            Works
-          </LinkItem>
-          <LinkItem
-            target="_blank"
-            href="https://github.com/Partanennn/portfolio-2.0/"
-            path={path}
-            display="inline-flex"
-            alignItems="center"
-            style={{ gap: 4 }}
-          >
-            <IoLogoGithub />
-            Source code
-          </LinkItem>
-        </Stack>
+            <Container
+                display="flex"
+                p={2}
+                maxW="container.md"
+                wrap="wrap"
+                align="center"
+                justify="space-between"
+            >
+                <Flex align="center" mr={5}>
+                    <Heading as="h1" size="lg" letterSpacing={'tighter'}>
+                        <Logo />
+                    </Heading>
+                </Flex>
 
-        <Box flex={1} align="right">
-          <ThemeToggleButton />
-          <Box ml={2} display={{ base: 'inline-block', md: 'none' }}>
-            <Menu>
-              <MenuButton
-                as={IconButton}
-                icon={<HamburgerIcon />}
-                variant="outline"
-                aria-label="Options"
-              />
-              <MenuList>
-                <NextLink href="/" passHref>
-                  <MenuItem as={Link}>About</MenuItem>
-                </NextLink>
-                <NextLink href="/works" passHref>
-                  <MenuItem as={Link}>Works</MenuItem>
-                </NextLink>
-                <MenuItem
-                  as={Link}
-                  href="https://github.com/Partanennn/portfolio-2.0/"
-                  display="inline-flex"
-                  alignItems="center"
-                  style={{ gap: 4 }}
+                <Stack
+                    direction={{ base: 'column', md: 'row' }}
+                    display={{ base: 'none', md: 'flex' }}
+                    width={{ base: 'full', md: 'auto' }}
+                    alignItems="center"
+                    flexGrow={1}
+                    mt={{ base: 4, nmd: 0 }}
                 >
-                  <IoLogoGithub />
-                  Source code
-                </MenuItem>
-                <MenuItem as={Link} href="https://www.craftz.dog/">
-                  View Takuya Matsuyama
-                </MenuItem>
-              </MenuList>
-            </Menu>
-          </Box>
-        </Box>
-      </Container>
-    </Box>
-  )
-}
+                    <LinkItem href="/works" path={path}>
+                        Works
+                    </LinkItem>
+                    <LinkItem
+                        target="_blank"
+                        href="https://github.com/Partanennn/portfolio-2.0/"
+                        path={path}
+                        display="inline-flex"
+                        alignItems="center"
+                        style={{ gap: 4 }}
+                    >
+                        <IoLogoGithub />
+                        Source code
+                    </LinkItem>
+                </Stack>
 
-export default NavBar
+                <Box flex={1} align="right">
+                    <ThemeToggleButton />
+                    <Box ml={2} display={{ base: 'inline-block', md: 'none' }}>
+                        <Menu>
+                            <MenuButton
+                                as={IconButton}
+                                icon={<HamburgerIcon />}
+                                variant="outline"
+                                aria-label="Options"
+                            />
+                            <MenuList>
+                                <NextLink href="/" passHref>
+                                    <MenuItem as={Link}>About</MenuItem>
+                                </NextLink>
+                                <NextLink href="/works" passHref>
+                                    <MenuItem as={Link}>Works</MenuItem>
+                                </NextLink>
+                                <MenuItem
+                                    as={Link}
+                                    href="https://github.com/Partanennn/portfolio-2.0/"
+                                    display="inline-flex"
+                                    alignItems="center"
+                                    style={{ gap: 4 }}
+                                >
+                                    <IoLogoGithub />
+                                    Source code
+                                </MenuItem>
+                            </MenuList>
+                        </Menu>
+                    </Box>
+                </Box>
+            </Container>
+        </Box>
+    );
+};
+
+export default NavBar;
