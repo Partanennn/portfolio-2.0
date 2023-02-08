@@ -30,15 +30,15 @@ const Page = () => {
                     mb={6}
                     align="center"
                 >
-                    Hello, I&apos;m a Full-stack developer based in Tampere,
-                    Finland!
+                    Hello, Aleksi is a Full-stack web developer based in
+                    Tampere, Finland!
                 </Box>
                 <Box display={{ md: 'flex' }}>
                     <Box flexGrow={1}>
                         <Heading as="h2" variant="page-title">
                             Aleksi Partanen
                         </Heading>
-                        <p>Web developer</p>
+                        <p>Full stack Web developer</p>
                     </Box>
                     <Box
                         flexShrink={0}
@@ -64,10 +64,12 @@ const Page = () => {
                         Work
                     </Heading>
                     <Paragraph>
-                        I&apos;m full-stack developer and I have been working
-                        with AP solution software for the last two years. Tech
-                        stack that has been in use has included React with
-                        Typescript, Redux, MS SQL, C# .NET and Azure.
+                        Aleksi is full-stack developer and he has been working
+                        with different web projects. Tech stack that has been in
+                        use has included web frameworks React and Angular,
+                        TypeScript Redux. Backend side has had MS SQL, C#
+                        (.NET), MongoDB and Nest.js. Azure DevOps, GitLab, Git
+                        are also familiar for Aleksi to work with.
                     </Paragraph>
                     <Box align="center" my={4}>
                         <NextLink href="/works">
@@ -83,8 +85,15 @@ const Page = () => {
                         Bio
                     </Heading>
                     <BioSection>
-                        <BioYear>2020 - present</BioYear>
-                        Started as Software Developer at Dooap Oy with
+                        <BioYear>10/2022 - present</BioYear>
+                        Software Developer at Insta Advance Oy
+                        <br />
+                        technologies:{' '}
+                        <b>Angular, TypeScript, MongoDB, Nest.js</b>
+                    </BioSection>
+                    <BioSection>
+                        <BioYear>12/2020 - 09/2022</BioYear>
+                        Software Developer at Dooap Oy
                         <br />
                         technologies:{' '}
                         <b>
@@ -153,7 +162,7 @@ const Page = () => {
                 </Section>
             </Container>
             <Text align="center" fontSize={14} color="grey">
-                &#169; 2022 Aleksi Partanen. All rights reserved
+                &#169; 2023 Aleksi Partanen. All rights reserved
             </Text>
         </Layout>
     );
